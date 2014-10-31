@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Slider Block Model</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <h3>Initial Conditions</h3>
+        <p>alpha = <input type="number" label="alpha" id="alpha">&nbsp;&nbsp;&nbsp;
+           beta = <input type="number" label="beta" id="beta">&nbsp;&nbsp;&nbsp;
+           phi = <input type="number" label="phi" id="phi"></p>
+
+        <p>Number of slip events to simulate: <input type="number" label="numberOfSlipEvents" id="numberOfSlipEvents"></p>
+        
+        <p><b>Initial values of (y1,y2)</b><br></p>
+        
+        <p>y1 = <input type="number" label="y1" id="y1Init">&nbsp;&nbsp;&nbsp;y2 = <input type="number" label="y2" id="y2Init"></p>
+        
+        <p><input type="button" value="Run Simulation" onclick="initiateSimulation();"></p>
+        <div id="graph">
+            <svg id="visualisation" width="500" height="500"></svg>
+        </div>
+
+        <div id="simData"></div>
+
+        <!-- Scripts -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/vendor/d3.min.js"></script>
+        <script src="js/DoubleSliderBlockSimulation.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
