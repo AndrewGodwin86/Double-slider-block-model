@@ -47,7 +47,7 @@ lslip1 = false;
 lslip2 = false;
 
 // Set fixed time step for now
-h = 0.005;
+h = 0.01;
 
 function initiateSimulation() {
 
@@ -239,8 +239,8 @@ function mainStretchSlipLoop () {
 function InitChart() {
 
   vis = d3.select("#visualisation"),
-    WIDTH = 500,
-    HEIGHT = 500,
+    WIDTH = 560,
+    HEIGHT = 560,
     MARGINS = {
       top: 20,
       right: 20,
@@ -274,7 +274,6 @@ function InitChart() {
       .orient("left")
       .tickSubdivide(true);
 
-
   vis.append("svg:g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
@@ -284,6 +283,22 @@ function InitChart() {
     .attr("class", "y axis")
     .attr("transform", "translate(" + (MARGINS.left) + ",0)")
     .call(yAxis);
+
+   vis.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "middle")
+    .attr("style", "font-style:italic;")
+    .attr("x", 280)
+    .attr("y", HEIGHT+10)
+    .text("Y_1");
+
+   vis.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "middle")
+    .attr("style", "font-style:italic;")
+    .attr("x", 0)
+    .attr("y", 280)
+    .text("Y_2");
 
   var lineFunc = d3.svg.line()
   .x(function (d) {
